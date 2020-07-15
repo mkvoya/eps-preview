@@ -11,40 +11,26 @@
 	],
 	"activationEvents": [
 		"onCommand:eps-preview.sidePreview",
-		"onCustomEditor:Preview.EPS"
+		"onLanguage:postscript"
 	],
 	"main": "./out/extension.js",
 	"contributes": {
 		"commands": [
 			{
 				"command": "eps-preview.sidePreview",
-				"title": "Preview EPS"
+				"title": "Preview EPS",
+				"icon": "$(open-preview)"
 			}
 		],
-		"languages": [
-			{
-				"id": "eps",
-				"extensions": [
-					".eps"
-				],
-				"aliases": [
-					"eps",
-					"EPS"
-				],
-				"configuration": "./language-configuration.json"
-			}
-		],
-		"customEditors": [
-			{
-				"viewType": "Preview.EPS",
-				"displayName": "EPS",
-				"selector": [
-					{
-						"filenamePattern": "*.eps"
-					}
-				]
-			}
-		]
+		"menus": {
+			"editor/title": [
+			  {
+				"when": "resourceLangId == postscript",
+				"command": "eps-preview.sidePreview",
+				"group": "navigation"
+			  }
+			]
+		  }
 	},
 	"scripts": {
 		"vscode:prepublish": "npm run compile",
