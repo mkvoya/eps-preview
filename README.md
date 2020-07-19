@@ -28,13 +28,13 @@ Currently, no extension setting is available. Do we need one?
 
 ## Known Issues
 
-Not yet.
+None yet.
 
 ## Release Notes
 
 Users appreciate release notes as you update your extension.
 
-### 0.0.1
+### 0.1.0
 
 Initial release (if it counts).
 
