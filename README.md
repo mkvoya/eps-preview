@@ -4,7 +4,7 @@ PostScript Preview is an extension that helps to preview EPS and PS files in [Vi
 
 <p align="center">
     <br/>
-    <a title="READ REQUIREMENTS AFTER INSTALL" href="#requirements"><img src="images/req-btn.png" alt="Read Requirements After Install" /</a>
+    <a title="READ REQUIREMENTS AFTER INSTALL" href="#requirements"><img src="docs/images/req-btn.png" alt="Read Requirements After Install" /</a>
 </p>
 
 
