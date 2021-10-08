@@ -1,7 +1,7 @@
 {
 	"name": "postscript-preview",
 	"displayName": "PostScript Preview",
-	"description": "Preview EPS figure files",
+	"description": "Preview EPS/PS files",
 	"version": "0.2.0",
 	"icon": "images/logo.jpeg",
 	"publisher": "ahnafnafee",

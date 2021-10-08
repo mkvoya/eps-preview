@@ -9,6 +9,5 @@ vsc-extension-quickstart.md
 **/*.map
 **/*.ts
 .idea/**
-images/**
 test_eps/**
 demo/**
