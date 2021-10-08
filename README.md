@@ -36,7 +36,7 @@ This extension also depends on two commands:
 
 Thus you need to install these two commands first and ensure they are in the executable path.
 
-For **macOS/Linux**, you could install them via homebrew:
+For **macOS/Linux**, you can install them via homebrew:
 
 ```sh
 brew install ghostscript pdf2svg
@@ -44,18 +44,29 @@ brew install ghostscript pdf2svg
 
 
 
-For **Windows 10**, you need to have [GhostScript](https://www.ghostscript.com/download/gsdnld.html) installed in your system.  You can install  them via [Chocolatey](https://chocolatey.org/install). Then run the following commands using an administrative shell.
+For **Windows 10**, you need to have GhostScript installed in your system.  You can install  them via [Chocolatey](https://chocolatey.org/install). Run the following commands using an administrative shell.
 
 ```bash
-choco install ghostscript --version 9.55.0 --force
+choco install ghostscript --version 9.55.0 --force -y
+
 set PATH=%PATH%;C:\Program Files\gs\gs9.55.0\lib;C:\Program Files\gs\gs9.55.0\bin
-choco install pdf2svg --ignore-checksums
+
+choco install pdf2svg --ignore-checksums -y
+
 refreshenv
+
 set PATH=%PATH%;C:\ProgramData\chocolatey\lib\pdf2svg\tools\pdf2svg-windows-master\dist-64bits
 ```
 
-
 You should now be able to view the EPS/PS files in the preview.
+
+If you are having issues setting the PATH, you can set it using the GUI instead as described [here](https://stackoverflow.com/questions/44272416/how-to-add-a-folder-to-path-environment-variable-in-windows-10-with-screensho). The paths that need to be added are:
+
+```bash
+C:\Program Files\gs\gs9.55.0\lib
+C:\Program Files\gs\gs9.55.0\bin
+C:\ProgramData\chocolatey\lib\pdf2svg\tools\pdf2svg-windows-master\dist-64bits
+```
 
 
 
@@ -66,6 +77,10 @@ None yet. If you run into issues, please report the issues. You are also encoura
 
 
 ## Release Notes
+
+#### 0.2.1
+
+- Fixed requirements for gs
 
 #### 0.2.0
 
