@@ -69,7 +69,7 @@ None yet. If you run into issues, please report the issues. You are also encoura
 
 ## Release Notes
 
-#### 0.2.0
+#### 0.2.1
 
 - Added support for EPS/PS file pan and zoom
 - Fixed extension usage for Windows
