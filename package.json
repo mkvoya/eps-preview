@@ -2,7 +2,7 @@
 	"name": "postscript-preview",
 	"displayName": "PostScript Preview",
 	"description": "Preview EPS figure files",
-	"version": "0.1.1",
+	"version": "0.2.0",
 	"publisher": "ahnaf",
 	"engines": {
 		"vscode": "^1.46.0"
