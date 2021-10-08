@@ -7,9 +7,9 @@
 This extension enables the in-VSCode preview of EPS image files.
 A new command `postscript-preview.sidePreview` is added as well as a preview icon in the menu bar when EPS or PS files are open in VSCode.
 
-A short demo is here:
+Demo:
 
-![demo](demo/eps-preview-demo.gif)
+<img src="demo/postscript-preview-demo.gif" alt="demo" style="zoom:50%;" />
 
 
 
@@ -24,6 +24,7 @@ This extension also depends on two commands:
 - `pdf2svg` - to convert the generated pdf to svg which is shown in the preview
 
 Thus you need to install these two commands first and ensure they are in the executable path.
+
 For **macOS/Linux**, you could install them via homebrew:
 
 ```sh
