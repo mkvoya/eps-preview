@@ -2,11 +2,11 @@
 
 
 <p align="center">
-    <img src="https://github.com/ahnafnafee/PostScript-Preview/raw/master/images/logo.png" alt="Logo" style="zoom:12%;" />
+    <img src="https://github.com/ahnafnafee/PostScript-Preview/raw/master/images/logo.png" alt="Logo"  width="128px" height="auto" />
 </p>
 
 
-PostScript Preview is an extension that helps to preview EPS and PS files in [Visual Studio Code](https://code.visualstudio.com/).
+**PostScript Preview** is an extension that helps to preview EPS and PS files in [Visual Studio Code](https://code.visualstudio.com/).
 
 <p align="center">
     <br/>
@@ -70,6 +70,10 @@ None yet. If you run into issues, please report the issues. You are also encoura
 ## Release Notes
 
 Users appreciate release notes as you update your extension.
+
+#### 0.2.3
+
+- Fixed README formatting issues
 
 #### 0.2.0
 
