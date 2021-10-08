@@ -48,12 +48,6 @@ You should now be able to view the EPS/PS files in the preview.
 
 
 
-## Extension Settings
-
-Currently, no extension setting is available. Do we need one?
-
-
-
 ## Known Issues
 
 None yet. If you run into issues, please report the issues. You are also encouraged to open pull requests for additional features and fixes you want to add to this extension.
@@ -71,5 +65,5 @@ Users appreciate release notes as you update your extension.
 
 #### 0.1.0
 
-Initial release (if it counts).
+- Initial release (if it counts).
 
