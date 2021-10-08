@@ -30,7 +30,7 @@ export function activate(context: vscode.ExtensionContext) {
 			// No active document
 			console.log("No active document. Do nothing.");
 			return;
-		}
+    }
 
 		const epsContent = document.getText();
 		const filename = path.basename(document.fileName);
@@ -38,7 +38,7 @@ export function activate(context: vscode.ExtensionContext) {
 
 		temp.track();
 		temp.open({prefix: "postscript-preview-svg_", suffix: '.pdf'}, function (pdfErr, pdfInfo) {
-			if (pdfErr) {
+      if (pdfErr) {
 				console.log("Creating temporary file eps-preview-pdf failed.");
 				return;
 			}
@@ -50,7 +50,7 @@ export function activate(context: vscode.ExtensionContext) {
 				// Transform EPS to SVG
 				// Thank https://superuser.com/a/769466/502597.
 				try {
-					execSync(`ps2pdf "${mainFilePath}" "${pdfInfo.path}"`);
+					execSync(`ps2pdf -dEPSCrop "${mainFilePath}" "${pdfInfo.path}"`);
 				} catch (err) {
 					vscode.window.showInformationMessage('Failed to execute ps2pdf, is that installed?');
 					console.log("Error executing ps2pdf.");
