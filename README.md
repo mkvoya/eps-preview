@@ -47,12 +47,10 @@ brew install ghostscript pdf2svg
 For **Windows 10**, you need to have [GhostScript](https://www.ghostscript.com/download/gsdnld.html) installed in your system.  You can install  them via [Chocolatey](https://chocolatey.org/install). Then run the following commands using an administrative shell.
 
 ```bash
-choco install ghostscript
-
+choco install ghostscript --version 9.55.0 --force
+set PATH=%PATH%;C:\Program Files\gs\gs9.55.0\lib;C:\Program Files\gs\gs9.55.0\bin
 choco install pdf2svg --ignore-checksums
-
 refreshenv
-
 set PATH=%PATH%;C:\ProgramData\chocolatey\lib\pdf2svg\tools\pdf2svg-windows-master\dist-64bits
 ```
 
