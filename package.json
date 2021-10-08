@@ -2,8 +2,8 @@
 	"name": "postscript-preview",
 	"displayName": "PostScript Preview",
 	"description": "Preview EPS/PS files",
-	"version": "0.2.0",
-	"icon": "images/logo.jpeg",
+	"version": "0.2.2",
+	"icon": "images/logo.png",
 	"publisher": "ahnafnafee",
 	"engines": {
 		"vscode": "^1.46.0"
