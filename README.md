@@ -1,4 +1,11 @@
-# PostScript-Preview: Preview EPS and PS files in VSCode
+# PostScript Preview
+
+PostScript Preview is an extension that helps to preview EPS and PS files in [Visual Studio Code](https://code.visualstudio.com/).
+
+<p align="center">
+    <br/>
+    <a title="READ REQUIREMENTS AFTER INSTALL" href="#requirements"><img src="images/req-btn.png" alt="Read Requirements After Install" /</a>
+</p>
 
 
 
