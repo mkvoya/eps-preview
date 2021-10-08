@@ -67,3 +67,10 @@ Users appreciate release notes as you update your extension.
 
 - Initial release (if it counts).
 
+
+
+## Credits
+
+- [mkvoya/eps-preview](https://github.com/mkvoya/eps-preview) for the original base extension
+- [bumbu/svg-pan-zoom](https://github.com/bumbu/svg-pan-zoom) for the SVG Pan Zoom library
+- [Simonwep/pickr](https://github.com/Simonwep/pickr) for the color picker library
