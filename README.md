@@ -6,7 +6,7 @@
 </p>
 
 
-**PostScript Preview** is an extension that helps to preview EPS and PS files in [Visual Studio Code](https://code.visualstudio.com/).
+**[PostScript Preview](https://marketplace.visualstudio.com/items?itemName=ahnafnafee.postscript-preview)** is an extension that helps to preview EPS and PS files in [Visual Studio Code](https://code.visualstudio.com/).
 
 <p align="center">
     <br/>
