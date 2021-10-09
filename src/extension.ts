@@ -151,19 +151,55 @@ function getWebviewContent(fileName: any, svgContent: any) {
       min-height: inherit;
     }
 
+    .control-container {
+      position: absolute;
+      top: 0px;
+      right: 0px;
+      margin-top: 2%;
+      margin-right: 2%;
+    }
+
     .btn-controls {
-      margin-top: 4px;
+      margin: 0 auto;
+      margin-bottom: 2px;
     }
 
     .control-btn {
-      margin-left: 2px;
-      margin-right: 2px;
+      background-color: #1EBFAF !important;
+      border-color: #1EBFAF !important;
+      font-weight: bold;
+    }
+
+    .control-btn:hover,
+    .control-btn:active,
+    .control-btn:visited {
+      background-color: #4B7D78 !important;
+      border-color: #4B7D78 !important;
+    }
+
+    .reset-btn {
+      background-color: white !important;
+      color: #209A8E !important;
+      border: 2px solid #43C4B7 !important;
+      font-weight: 600;
+    }
+
+    .reset-btn:hover,
+    .reset-btn:active,
+    .reset-btn:visited {
+      background-color: #4B7D78 !important;
+      color: white !important;
+      border-color: #4B7D78 !important;
     }
 
     #reset {
       width: 56px;
       height: auto;
       text-align: center;
+    }
+
+    #hider {
+      border: 0.16em solid #43C4B7 !important;
     }
 
     .pickr-container {
@@ -207,15 +243,22 @@ function getWebviewContent(fileName: any, svgContent: any) {
   </div>
 
   <div class="btn-controls d-flex justify-content-center">
-    <button id="zoom-in" type="button" class="control-btn btn btn-primary btn-sm">-</button>
-    <button id="zoom-out" type="button" class="control-btn btn btn-primary btn-sm">+</button>
-  </div>
-  <div class="btn-controls d-flex justify-content-center">
-    <button id="reset" type="button" class="btn btn-outline-primary reset-btn btn-sm">Reset</button>
+    <button id="hider" type="button" onclick="hideControls()" class="btn btn-outline-primary reset-btn btn-sm">Hide Controls</button>
   </div>
 
   <section id="zoomText" class="d-flex justify-content-center">
-    <div id="container" style="margin: 3% 10% 5%;width: inherit; height: max-content; border:1px solid black; border-radius: 8px;">
+    <div id="container" style="margin: 3% 6% 3%; width: inherit; height: max-content; border:1px solid black; border-radius: 8px; position: relative; overflow: hidden;">
+      <div class="control-container d-flex align-items-end flex-column justify-content-center">
+        <div class="btn-controls">
+          <button id="zoom-out" type="button" class="control-btn btn btn-primary btn-sm">+</button>
+        </div>
+        <div class="btn-controls">
+          <button id="reset" type="button" class="btn btn-outline-primary reset-btn btn-sm">Reset</button>
+        </div>
+        <div class="btn-controls">
+          <button id="zoom-in" type="button" class="control-btn btn btn-primary btn-sm">-</button>
+        </div>
+      </div>
       ${svgContent}
     </div>
   </section>
@@ -226,7 +269,7 @@ function getWebviewContent(fileName: any, svgContent: any) {
     const pickr = Pickr.create({
       el: inputElement,
       useAsButton: true,
-      default: '#9BFFF4',
+      default: '#1EBFAF',
       defaultRepresentation: 'HEX',
       theme: 'nano', // or 'monolith', or 'nano'
       swatches: [
@@ -280,6 +323,21 @@ function getWebviewContent(fileName: any, svgContent: any) {
         panZoom.resetPan()
       });
     };
+    
+    const controlDiv = document.querySelector('.control-container');
+    const hideToggle = document.querySelector('#hider');
+    
+    controlDiv.style.visibility = "visible";
+    
+    function hideControls() {
+      if (controlDiv.style.visibility === "visible") {
+        controlDiv.style.visibility = "hidden";
+        hideToggle.textContent = 'Show Controls';
+      } else {
+        controlDiv.style.visibility = "visible";
+        hideToggle.textContent = 'Hide Controls';
+      }
+    }
   </script>
 </body>
 
