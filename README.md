@@ -49,7 +49,7 @@ For **Windows 10**, you need to have GhostScript installed in your system.  You 
 ```bash
 choco install ghostscript --version 9.55.0 --force -y
 
-set PATH=%PATH%;C:\Program Files\gs\gs9.55.0\lib;C:\Program Files\gs\gs9.55.0\bin
+set PATH=%PATH%;"C:\Program Files\gs\gs9.55.0\lib";"C:\Program Files\gs\gs9.55.0\bin"
 
 choco install pdf2svg --ignore-checksums -y
 
