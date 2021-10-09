@@ -36,7 +36,7 @@ This extension also depends on two commands:
 
 Thus you need to install these two commands first and ensure they are in the executable path.
 
-For **macOS/Linux**, you can install them via homebrew:
+For **macOS/Linux**, you can install them via [homebrew](https://brew.sh/):
 
 ```sh
 brew install ghostscript pdf2svg
