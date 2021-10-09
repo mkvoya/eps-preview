@@ -1,17 +1,21 @@
-# PostScript Preview
+[![](https://vsmarketplacebadge.apphb.com/version-short/ahnafnafee.postscript-preview.svg)](https://marketplace.visualstudio.com/items?itemName=ahnafnafee.postscript-preview)[![](https://vsmarketplacebadge.apphb.com/installs-short/ahnafnafee.postscript-preview.svg)](https://marketplace.visualstudio.com/items?itemName=ahnafnafee.postscript-preview)[![](https://vsmarketplacebadge.apphb.com/rating-short/ahnafnafee.postscript-preview.svg)](https://marketplace.visualstudio.com/items?itemName=ahnafnafee.postscript-preview)
 
 
 <p align="center">
     <img src="https://github.com/ahnafnafee/PostScript-Preview/raw/master/images/logo.png" alt="Logo"  width="128px" height="auto" />
 </p>
-
-
-**[PostScript Preview](https://marketplace.visualstudio.com/items?itemName=ahnafnafee.postscript-preview)** is an extension that helps to preview EPS and PS files in [Visual Studio Code](https://code.visualstudio.com/).
-
 <p align="center">
     <br/>
     <a title="READ REQUIREMENTS AFTER INSTALL" href="#requirements"><img src="https://github.com/ahnafnafee/PostScript-Preview/raw/master/docs/images/req-btn.png" alt="Read Requirements After Install"></a>
 </p>
+
+
+# PostScript Preview
+
+
+
+> PostScript Preview is an extension that helps to **preview** EPS and PS files in [Visual Studio Code](https://code.visualstudio.com/). It supercharges how your view PostScript files by also allowing to **pan** and **zoom** the image. You can also change the preview background for extra **customizations**.
+
 
 
 
