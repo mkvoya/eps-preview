@@ -33,7 +33,7 @@ A new command `postscript-preview.sidePreview` is added as well as a preview ico
 ## Requirements
 
 This extension depends on the `PostScript Language` extension to recognize EPS/PS file.
-You can install that extension from the VSCode extension store.
+You can install that [extension](https://marketplace.visualstudio.com/items?itemName=mxschmitt.postscript) from the VSCode extension store.
 
 This extension also depends on two commands:
 
@@ -42,10 +42,20 @@ This extension also depends on two commands:
 
 Thus you need to install these two commands first and ensure they are in the executable path.
 
-For **macOS/Linux**, you can install them via [homebrew](https://brew.sh/):
+For **macOS**, you can install them via [homebrew](https://brew.sh/):
 
-```sh
-brew install ghostscript pdf2svg
+```bash
+brew install ghostscript 
+brew install pdf2svg
+```
+
+
+
+For **Ubuntu**, you can install them using the following commands:
+
+```bash
+sudo apt-get install ghostscript -y
+sudo apt-get install pdf2svg -y
 ```
 
 
