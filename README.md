@@ -1,5 +1,3 @@
-[![](https://vsmarketplacebadge.apphb.com/version-short/ahnafnafee.postscript-preview.svg)](https://marketplace.visualstudio.com/items?itemName=ahnafnafee.postscript-preview) [![](https://vsmarketplacebadge.apphb.com/installs-short/ahnafnafee.postscript-preview.svg)](https://marketplace.visualstudio.com/items?itemName=ahnafnafee.postscript-preview) [![](https://vsmarketplacebadge.apphb.com/rating-short/ahnafnafee.postscript-preview.svg)](https://marketplace.visualstudio.com/items?itemName=ahnafnafee.postscript-preview)
-
 <p align="center">
 	  <a href="https://marketplace.visualstudio.com/items?itemName=ahnafnafee.postscript-preview">
 	    <img alt="Version Number" src="https://vsmarketplacebadge.apphb.com/version-short/ahnafnafee.postscript-preview.svg"></a>
