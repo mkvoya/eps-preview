@@ -207,6 +207,45 @@
   </main>
   </div>
   <script>
+    const inputElement = document.querySelector('.pickr');
+    // Simple example, see optional options for more configuration.
+    const pickr = Pickr.create({
+      el: inputElement,
+      useAsButton: true,
+      default: '#1EBFAF',
+      defaultRepresentation: 'HEX',
+      theme: 'nano', // or 'monolith', or 'nano'
+      swatches: [
+        'rgba(244, 67, 54, 1)',
+        'rgba(233, 30, 99, 1)',
+        'rgba(156, 39, 176, 1)',
+        'rgba(103, 58, 183, 1)',
+        'rgba(63, 81, 181, 1)',
+        'rgba(33, 150, 243, 1)',
+        'rgba(3, 169, 244, 1)',
+      ],
+      components: {
+        // Main components
+        preview: true,
+        opacity: true,
+        hue: true,
+        // Input / output Options
+        interaction: {
+          hex: true,
+          rgba: true,
+          input: true,
+          clear: true,
+          save: true
+        }
+      }
+    }).on('init', pickr => {
+      inputElement.style.background = pickr.getSelectedColor().toHEXA().toString();
+    }).on('save', color => {
+      pickr.hide();
+      document.getElementById("container").style.background = color.toHEXA().toString();
+      inputElement.style.background = pickr.getSelectedColor().toHEXA().toString();
+    });
+    
     // SVG Pan Zoom
     window.onload = function() {
       const panZoom = svgPanZoom(document.getElementsByTagName("svg")[0], {
