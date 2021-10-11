@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- One of the following themes -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/themes/nano.min.css" /> <!-- 'nano' theme -->
+
+  <!-- Modern or es5 bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/pickr.min.js"></script>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-uWxY/CJNBR+1zjPWmfnSnVxwRheevXITnMqoEIeG1LJrdI0GlVs/9cVSyPYXdcSF" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-kQtW33rZJAHjgefvhyyzcGF3C5TFyBQBA13V1RKPf4uH+bwyzQxZ6CmMZHmNBEfJ" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/svg-pan-zoom@3.5.0/dist/svg-pan-zoom.min.js"></script>
+  <style>
+    body {
+      margin-top: 10%;
+    }
+
+    .main-main-container {
+      margin: 3% 2%;
+    }
+
+    .outer-container {
+      margin: 0 auto;
+      max-width: max-content;
+      max-height: max-content;
+      border-radius: 8px;
+      position: relative;
+      border: 1px solid black;
+      overflow: clip;
+      background: #ebffff;
+    }
+
+    .main-header {
+      position: -webkit-sticky;
+      position: sticky;
+      top: 0;
+      float: right;
+      width: 100px;
+      height: auto;
+      z-index: 1;
+      scroll-behavior: smooth;
+      background: pink;
+      padding: 2%;
+    }
+
+    svg {
+      display: inline-block !important;
+    }
+
+    .btn-controls {
+      margin: 0 auto;
+      margin-bottom: 2px;
+    }
+
+    .control-btn {
+      background-color: #1ebfaf !important;
+      border-color: #1ebfaf !important;
+      font-weight: bold;
+    }
+
+    .control-btn:hover,
+    .control-btn:active,
+    .control-btn:visited {
+      background-color: #4b7d78 !important;
+      border-color: #4b7d78 !important;
+    }
+
+    .reset-btn {
+      background-color: white !important;
+      color: #209a8e !important;
+      border: 2px solid #43c4b7 !important;
+      font-weight: 600;
+    }
+
+    .reset-btn:hover,
+    .reset-btn:active,
+    .reset-btn:visited {
+      background-color: #4b7d78 !important;
+      color: white !important;
+      border-color: #4b7d78 !important;
+    }
+
+    #reset {
+      width: 56px;
+      height: auto;
+      text-align: center;
+    }
+
+    #hider {
+      border: 0.16em solid #43c4b7 !important;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="btn-controls d-flex justify-content-center">
+    <button id="hider" type="button" onclick="hideControls()" class="btn btn-outline-primary reset-btn btn-sm">Hide Controls</button>
+  </div>
+  <div class="main-main-container">
+  <main class="outer-container">
+    <div class="main-header">
+      <div class="control-container d-flex align-items-end flex-column justify-content-center">
+        <div class="btn-controls">
+          <button id="zoom-out" type="button" class="control-btn btn btn-primary btn-sm">+</button>
+        </div>
+        <div class="btn-controls">
+          <button id="reset" type="button" class="btn btn-outline-primary reset-btn btn-sm">Reset</button>
+        </div>
+        <div class="btn-controls">
+          <button id="zoom-in" type="button" class="control-btn btn btn-primary btn-sm">-</button>
+        </div>
+      </div>
+    </div>
+    <div id="container" class="main-content">
+      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="500pt" height="500pt" viewBox="0 0 500 500" version="1.1">
+        <g id="surface1">
+          <path style="fill:none;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 0 0 L 4990 0 " transform="matrix(0.1,0,0,-0.1,0,500)" />
+          <path style="fill:none;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 0 4990 L 4990 4990 " transform="matrix(0.1,0,0,-0.1,0,500)" />
+          <path style="fill:none;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 0 0 L 0 4990 " transform="matrix(0.1,0,0,-0.1,0,500)" />
+          <path style="fill:none;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 4990 0 L 4990 4990 " transform="matrix(0.1,0,0,-0.1,0,500)" />
+          <path style="fill:none;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 2600 2500 L 3000 2500 " transform="matrix(0.1,0,0,-0.1,0,500)" />
+          <path style="fill:none;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 2500 2600 L 2500 3000 " transform="matrix(0.1,0,0,-0.1,0,500)" />
+          <path style="fill:none;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 2400 2500 L 2000 2500 " transform="matrix(0.1,0,0,-0.1,0,500)" />
+          <path style="fill:none;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 2500 2400 L 2500 2000 " transform="matrix(0.1,0,0,-0.1,0,500)" />
+          <path style="fill:none;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 2600 2600 L 3000 3000 " transform="matrix(0.1,0,0,-0.1,0,500)" />
+          <path style="fill:none;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 2400 2600 L 2000 3000 " transform="matrix(0.1,0,0,-0.1,0,500)" />
+          <path style="fill:none;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 2600 2400 L 3000 2000 " transform="matrix(0.1,0,0,-0.1,0,500)" />
+          <path style="fill:none;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 2400 2400 L 2000 2000 " transform="matrix(0.1,0,0,-0.1,0,500)" />
+          <path style="fill:none;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 100 200 L 200 4900 " transform="matrix(0.1,0,0,-0.1,0,500)" />
+          <path style="fill:none;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 200 4900 L 4900 4800 " transform="matrix(0.1,0,0,-0.1,0,500)" />
+          <path style="fill:none;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 4900 4800 L 4800 100 " transform="matrix(0.1,0,0,-0.1,0,500)" />
+          <path style="fill:none;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 4800 100 L 100 200 " transform="matrix(0.1,0,0,-0.1,0,500)" />
+          <path style="fill:none;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M -500 -500 L 500 500 " transform="matrix(0.1,0,0,-0.1,0,500)" />
+          <path style="fill:none;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M -1000 2500 L 2500 -1000 " transform="matrix(0.1,0,0,-0.1,0,500)" />
+          <path style="fill:none;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 6000 2500 L 2500 -1000 " transform="matrix(0.1,0,0,-0.1,0,500)" />
+          <path style="fill:none;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M -1000 2500 L 2500 6000 " transform="matrix(0.1,0,0,-0.1,0,500)" />
+          <path style="fill:none;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 6000 2500 L 2500 6000 " transform="matrix(0.1,0,0,-0.1,0,500)" />
+        </g>
+      </svg>
+    </div>
+
+  </main>
+  </div>
+  <script>
+    // SVG Pan Zoom
+    window.onload = function() {
+      const panZoom = svgPanZoom(document.getElementsByTagName("svg")[0], {
+        zoomEnabled: true,
+        controlIconsEnabled: false
+      });
+      document.getElementById("zoom-out").addEventListener("click", function(ev) {
+        ev.preventDefault();
+        panZoom.zoomIn();
+      });
+      document.getElementById("zoom-in").addEventListener("click", function(ev) {
+        ev.preventDefault();
+        panZoom.zoomOut();
+      });
+      document.getElementById("reset").addEventListener("click", function(ev) {
+        ev.preventDefault();
+        panZoom.resetZoom();
+        panZoom.resetPan();
+      });
+    };
+    const controlDiv = document.querySelector(".control-container");
+    const hideToggle = document.querySelector("#hider");
+    controlDiv.style.visibility = "visible";
+
+    function hideControls() {
+      if (controlDiv.style.visibility === "visible") {
+        controlDiv.style.visibility = "hidden";
+        hideToggle.textContent = "Show Controls";
+      } else {
+        controlDiv.style.visibility = "visible";
+        hideToggle.textContent = "Hide Controls";
+      }
+    }
+  </script>
+</body>
+
+</html>
