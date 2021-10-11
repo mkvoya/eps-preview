@@ -68,7 +68,7 @@ choco install pdf2svg --ignore-checksums -y
 
 refreshenv
 
-set PATH=%PATH%;C:\ProgramData\chocolatey\lib\pdf2svg\tools\pdf2svg-windows-master\dist-64bits
+set PATH=%PATH%;"C:\ProgramData\chocolatey\lib\pdf2svg\tools\pdf2svg-windows-master\dist-64bits"
 ```
 
 You should now be able to view the EPS/PS files in the preview.
