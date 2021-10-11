@@ -14,7 +14,18 @@
   <script src="https://cdn.jsdelivr.net/npm/svg-pan-zoom@3.5.0/dist/svg-pan-zoom.min.js"></script>
   <style>
     body {
-      margin-top: 10%;
+      margin-top: 2%;
+      padding: 2% 0%;
+    }
+
+    h2 {
+      font-size: 1.2em;
+      margin-left: 10%;
+      border: 1px solid black;
+      width: max-content;
+      padding: 4px 8px;
+      border-radius: 4px;
+      margin-bottom: 2%;
     }
 
     .main-main-container {
@@ -30,6 +41,7 @@
       border: 1px solid black;
       overflow: clip;
       background: #ebffff;
+      position:relative;
     }
 
     .main-header {
@@ -37,22 +49,27 @@
       position: sticky;
       top: 0;
       float: right;
-      width: 0px;
-      height: 0px;
-      z-index: 1;
+      width: 0;
+      height: max-content;
       scroll-behavior: smooth;
       background: pink;
-      margin-top: 7em;
-      margin-right: 2.5em;
+      padding-top: 1em;
+      padding-right: 2.5em;
+      
     }
 
-    .control-container {
-
+    .main-content {
+      display: hidden;
+      top:0;
+      right:0;
     }
 
     svg {
-      display: inline-block !important;
+      display: hidden !important;
       width: inherit;
+      /* position:absolute;
+      top:0;
+      right:0; */
     }
 
     .btn-controls {
@@ -95,18 +112,57 @@
     }
 
     #hider {
-      border: 0.16em solid #43c4b7 !important;
+      border: 0.16em solid #209a8e !important;
+    }
+
+    .pickr .pcr-button.clear {
+      background: white;
+    }
+
+    .pickr-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-right: 10% !important;
+      float: right;
+      position: absolute;
+      justify-content: flex-end;
+      padding: 2% 0%;
+      right: 0;
+      top: 2%;
+      width: max-content;
+      height: max-content;
+    }
+
+    div>.pickr {
+      background: #000;
+      color: white;
+      border: 1px solid black;
+      top: 0;
+      margin: 0;
+      padding: 0;
+      cursor: pointer;
+      border-radius: 4px;
+      height: 30px;
+      width: 40px;
     }
   </style>
+  <title>PostScript Preview</title>
 </head>
 
 <body>
+  <h2>${fileName}</h2>
+
+  <div class="pickr-container">
+    <div class="pickr"></div>
+  </div>
+
   <div class="btn-controls d-flex justify-content-center">
     <button id="hider" type="button" onclick="hideControls()" class="btn btn-outline-primary reset-btn btn-sm">Hide Controls</button>
   </div>
   <div class="main-main-container">
   <main class="outer-container">
-    <div class="main-header d-flex align-items-end justify-content-center close">
+    <div class="main-header d-flex align-items-end justify-content-center">
       <div class="control-container d-flex align-items-end flex-column justify-content-center">
         <div class="btn-controls">
           <button id="zoom-out" type="button" class="control-btn btn btn-primary btn-sm">+</button>
