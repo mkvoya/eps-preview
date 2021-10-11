@@ -37,16 +37,22 @@
       position: sticky;
       top: 0;
       float: right;
-      width: 100px;
-      height: auto;
+      width: 0px;
+      height: 0px;
       z-index: 1;
       scroll-behavior: smooth;
       background: pink;
-      padding: 2%;
+      margin-top: 7em;
+      margin-right: 2.5em;
+    }
+
+    .control-container {
+
     }
 
     svg {
       display: inline-block !important;
+      width: inherit;
     }
 
     .btn-controls {
@@ -55,31 +61,31 @@
     }
 
     .control-btn {
-      background-color: #1ebfaf !important;
-      border-color: #1ebfaf !important;
+      background-color: #209a8e !important;
+      border-color: #209a8e !important;
       font-weight: bold;
     }
 
     .control-btn:hover,
     .control-btn:active,
     .control-btn:visited {
-      background-color: #4b7d78 !important;
-      border-color: #4b7d78 !important;
+      background-color: #209a8e !important;
+      border-color: #209a8e !important;
     }
 
     .reset-btn {
       background-color: white !important;
       color: #209a8e !important;
-      border: 2px solid #43c4b7 !important;
+      border: 2px solid #209a8e !important;
       font-weight: 600;
     }
 
     .reset-btn:hover,
     .reset-btn:active,
     .reset-btn:visited {
-      background-color: #4b7d78 !important;
+      background-color: #209a8e !important;
       color: white !important;
-      border-color: #4b7d78 !important;
+      border-color: #209a8e !important;
     }
 
     #reset {
@@ -100,7 +106,7 @@
   </div>
   <div class="main-main-container">
   <main class="outer-container">
-    <div class="main-header">
+    <div class="main-header d-flex align-items-end justify-content-center close">
       <div class="control-container d-flex align-items-end flex-column justify-content-center">
         <div class="btn-controls">
           <button id="zoom-out" type="button" class="control-btn btn btn-primary btn-sm">+</button>
@@ -114,6 +120,7 @@
       </div>
     </div>
     <div id="container" class="main-content">
+      <!-- <p style="width: 200px; height: 200px">Hello</p> -->
       <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="500pt" height="500pt" viewBox="0 0 500 500" version="1.1">
         <g id="surface1">
           <path style="fill:none;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 0 0 L 4990 0 " transform="matrix(0.1,0,0,-0.1,0,500)" />
