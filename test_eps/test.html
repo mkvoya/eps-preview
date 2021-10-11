@@ -52,7 +52,6 @@
       width: 0;
       height: max-content;
       scroll-behavior: smooth;
-      background: pink;
       padding-top: 1em;
       padding-right: 2.5em;
       z-index: 2;
@@ -61,11 +60,10 @@
     .main-content {
       top:0;
       right:0;
+      white-space: nowrap;
     }
 
     svg {
-      right: 0;
-      /* position:absolute; */
       width: inherit;
       height: inherit;
     }
@@ -174,7 +172,7 @@
         </div>
       </div>
       <div id="container" class="main-content">
-        <p style="right: 0; position: absolute; text-align: right;">Hello</p>
+        <?xml version="1.0" encoding="UTF-8"?>
         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="500pt" height="500pt" viewBox="0 0 500 500" version="1.1">
           <g id="surface1">
             <path style="fill:none;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 0 0 L 4990 0 " transform="matrix(0.1,0,0,-0.1,0,500)" />
@@ -284,14 +282,14 @@
 
     const mainContainer = document.querySelector(".main-container");
     console.log(mainContainer);
-    // mainContainer.style.minWidth = rect.width;
-    // mainContainer.style.minHeight = rect.height;
+    // mainContainer.style.maxWidth = rect.width + "pt";
+    // mainContainer.style.maxHeight = rect.height + "pt";
 
-    // console.log(mainContainer.style.minWidth);
-    // console.log(mainContainer.style.minHeight);
+    console.log(mainContainer.style.maxWidth);
+    console.log(mainContainer.style.maxHeight);
 
-    // console.log(rect.width);
-    // console.log(rect.height);
+    console.log(rect.width);
+    console.log(rect.height);
 
 
   </script>
