@@ -1,5 +1,4 @@
 # eps-preview: Preview EPS figure files in VSCode
-
 ## Features
 
 This extension enables the in-VSCode preview of EPS image files.
@@ -24,7 +23,10 @@ brew install ghostscript pdf2svg
 
 ## Extension Settings
 
-Currently, no extension setting is available. Do we need one?
+Two settings can be set to specify the locations of the used binaries:
+
+- `eps-preview.path.ps2pdf`
+- `eps-preview.path.pdf2svg`
 
 ## Known Issues
 
