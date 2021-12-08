@@ -36,7 +36,7 @@ None yet.
 
 Users appreciate release notes as you update your extension.
 
-### 0.1.1
+### 0.3.0
 
 Added two configurations for binary locations.
 
