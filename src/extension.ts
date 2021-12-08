@@ -32,6 +32,12 @@ export function activate(context: vscode.ExtensionContext) {
 		const epsContent = document.getText();
 		const filename = path.basename(document.fileName);
 
+		// launch.json configuration
+		const config = vscode.workspace.getConfiguration('eps-preview');
+		// retrieve values
+		const ps2pdfPath = config.get('path.ps2pdf', 'ps2pdf');
+		const pdf2svgPath = config.get('path.pdf2svg', 'pdf2svg');
+
 		temp.track();
 		temp.open('eps-preview-pdf', function (pdfErr, pdfInfo) {
 			if (pdfErr) {
@@ -46,7 +52,7 @@ export function activate(context: vscode.ExtensionContext) {
 				// Transform EPS to SVG
 				// Thank https://superuser.com/a/769466/502597.
 				try {
-					execSync(`ps2pdf -dEPSCrop - ${pdfInfo.path}`, { input: epsContent });
+					execSync(`${ps2pdfPath} -dEPSCrop - ${pdfInfo.path}`, { input: epsContent });
 				} catch (err) {
 					vscode.window.showInformationMessage('Failed to execute ps2pdf, is that installed?');
 					console.log("Error executing ps2pdf.");
@@ -56,7 +62,7 @@ export function activate(context: vscode.ExtensionContext) {
 					return;
 				}
 				try {
-					execSync(`pdf2svg ${pdfInfo.path} ${svgInfo.path}`);
+					execSync(`${pdf2svgPath} ${pdfInfo.path} ${svgInfo.path}`);
 				} catch (err) {
 					vscode.window.showInformationMessage('Failed to execute pdf2svg, is that installed?');
 					console.log("Error executing pdf2svg.");

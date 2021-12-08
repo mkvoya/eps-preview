@@ -2,7 +2,7 @@
 	"name": "eps-preview",
 	"displayName": "eps-preview",
 	"description": "Preview EPS figure files",
-	"version": "0.1.0",
+	"version": "0.1.1",
 	"publisher": "mkvoya",
 	"engines": {
 		"vscode": "^1.46.0"
@@ -31,6 +31,28 @@
 					"group": "navigation"
 				}
 			]
+		},
+		"configuration": {
+			"type": "object",
+			"title": "EPS-Preview",
+			"properties": {
+				"eps-preview.path.ps2pdf": {
+					"type": [
+						"string",
+						"null"
+					],
+					"default": "ps2pdf",
+					"description": "The path to the ps2pdf binary."
+				},
+				"eps-preview.path.pdf2svg": {
+					"type": [
+						"string",
+						"null"
+					],
+					"default": "pdf2svg",
+					"description": "The path to the pdf2svg binary."
+				}
+			}
 		}
 	},
 	"scripts": {
