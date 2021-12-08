@@ -36,6 +36,10 @@ None yet.
 
 Users appreciate release notes as you update your extension.
 
+### 0.1.1
+
+Added two configurations for binary locations.
+
 ### 0.1.0
 
 Initial release (if it counts).
