@@ -98,6 +98,13 @@ export function activate(context: vscode.ExtensionContext) {
 		}
 		const filename = document.fileName;
 		genPreview(filename, panel);
+		let watcher = vscode.workspace.createFileSystemWatcher(filename);
+		watcher.onDidChange((e:vscode.Uri) => {
+			genPreview(filename, panel);
+		});
+		panel.onDidDispose(()=>{
+			watcher.dispose();
+		});
 	});
 
 	context.subscriptions.push(disposable);
