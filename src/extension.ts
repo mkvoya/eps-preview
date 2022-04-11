@@ -82,12 +82,6 @@ export function activate(context: vscode.ExtensionContext) {
 	// Now provide the implementation of the command with registerCommand
 	// The commandId parameter must match the command field in package.json
 	let disposable = vscode.commands.registerCommand('eps-preview.sidePreview', () => {
-
-		// Create new panel
-		let panel = vscode.window.createWebviewPanel('', 'EPS Preview',
-			vscode.ViewColumn.Beside,
-		);
-
 		// Get the EPS content
 		const document = vscode.window.activeTextEditor?.document;
 
@@ -97,6 +91,10 @@ export function activate(context: vscode.ExtensionContext) {
 			return;
 		}
 		const filename = document.fileName;
+		// Create new panel
+		let panel = vscode.window.createWebviewPanel('', 'EPS Preview ' + path.basename(filename),
+			vscode.ViewColumn.Beside,
+		);
 		genPreview(filename, panel);
 		channel.appendLine("Watching " + filename);
 		let watcher = vscode.workspace.createFileSystemWatcher(filename);
