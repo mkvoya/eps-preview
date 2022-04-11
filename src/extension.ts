@@ -77,7 +77,7 @@ function genPreview(filepath:string, panel:vscode.WebviewPanel) {
 // this method is called when your extension is activated
 // your extension is activated the very first time the command is executed
 export function activate(context: vscode.ExtensionContext) {
-
+	let channel = vscode.window.createOutputChannel("EPS-Preview");
 	// The command has been defined in the package.json file
 	// Now provide the implementation of the command with registerCommand
 	// The commandId parameter must match the command field in package.json
@@ -98,12 +98,15 @@ export function activate(context: vscode.ExtensionContext) {
 		}
 		const filename = document.fileName;
 		genPreview(filename, panel);
+		channel.appendLine("Watching " + filename);
 		let watcher = vscode.workspace.createFileSystemWatcher(filename);
 		watcher.onDidChange((e:vscode.Uri) => {
+			channel.appendLine("File changed, regenerating : " + filename);
 			genPreview(filename, panel);
 		});
 		panel.onDidDispose(()=>{
 			watcher.dispose();
+			channel.appendLine("Stop watching " + filename);
 		});
 	});
 
