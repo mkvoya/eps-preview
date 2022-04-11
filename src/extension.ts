@@ -6,7 +6,18 @@ import temp = require('temp');
 import fs = require('fs');
 import path = require('path');
 
-function genPreview(filename:string, epsContent:string, panel:vscode.WebviewPanel) {
+function genPreview(filepath:string, panel:vscode.WebviewPanel) {
+	let epsContent : string;
+	try {
+		epsContent = fs.readFileSync(filepath).toString();
+	} catch (err) {
+		vscode.window.showInformationMessage('Failed to read eps file');
+		console.log("Error reading " + filepath + ".");
+		console.log(err);
+		return;
+	}
+
+	const shortname = path.basename(filepath);
 	// launch.json configuration
 	const config = vscode.workspace.getConfiguration('eps-preview');
 	// retrieve values
@@ -51,7 +62,7 @@ function genPreview(filename:string, epsContent:string, panel:vscode.WebviewPane
 				let svgContent = Buffer.alloc(stat.size);
 				fs.readSync(svgInfo.fd, svgContent, 0, stat.size, null);
 				// Show SVG in the webview panel
-				panel.webview.html = `<h1>${filename}</h1>` + svgContent;
+				panel.webview.html = `<h1>${shortname}</h1>` + svgContent;
 			} catch (err) {
 				console.log("Error reading the final file.");
 				console.log(err);
@@ -85,10 +96,8 @@ export function activate(context: vscode.ExtensionContext) {
 			console.log("No active document. Do nothing.");
 			return;
 		}
-
-		const epsContent = document.getText();
-		const filename = path.basename(document.fileName);
-		genPreview(filename, epsContent, panel);
+		const filename = document.fileName;
+		genPreview(filename, panel);
 	});
 
 	context.subscriptions.push(disposable);
