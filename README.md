@@ -36,6 +36,10 @@ None yet.
 
 Users appreciate release notes as you update your extension.
 
+### 0.4.0
+
+Added support for auto refresh on file change. Thanks to Jeffery-Song.
+
 ### 0.3.0
 
 Added two configurations for binary locations.

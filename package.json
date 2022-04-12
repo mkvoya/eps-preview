@@ -2,7 +2,7 @@
 	"name": "eps-preview",
 	"displayName": "eps-preview",
 	"description": "Preview EPS figure files",
-	"version": "0.3.0",
+	"version": "0.4.0",
 	"publisher": "mkvoya",
 	"engines": {
 		"vscode": "^1.46.0"
