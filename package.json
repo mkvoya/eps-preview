@@ -51,6 +51,11 @@
 					],
 					"default": "pdf2svg",
 					"description": "The path to the pdf2svg binary."
+				},
+				"eps-preview.backgroundColor": {
+					"type": "string",
+					"default": "white",
+					"description": "The background color of the preview."
 				}
 			}
 		}
