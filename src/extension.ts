@@ -62,7 +62,18 @@ function genPreview(filepath:string, panel:vscode.WebviewPanel) {
 				let svgContent = Buffer.alloc(stat.size);
 				fs.readSync(svgInfo.fd, svgContent, 0, stat.size, null);
 				// Show SVG in the webview panel
-				panel.webview.html = `<h1>${shortname}</h1>` + svgContent;
+				const config = vscode.workspace.getConfiguration('eps-preview');
+				let backgroundColor = config.get('backgroundColor', 'white');
+
+				panel.webview.html = `
+					<style>
+						body {
+							background-color: ${backgroundColor};
+						}
+					</style>
+					<h1>${shortname}</h1>
+					${svgContent}
+				`;
 			} catch (err) {
 				console.log("Error reading the final file.");
 				console.log(err);
@@ -94,6 +105,7 @@ export function activate(context: vscode.ExtensionContext) {
 		// Create new panel
 		let panel = vscode.window.createWebviewPanel('', 'EPS Preview ' + path.basename(filename),
 			vscode.ViewColumn.Beside,
+			{enableScripts: true}
 		);
 		genPreview(filename, panel);
 		channel.appendLine("Watching " + filename);
