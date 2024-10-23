@@ -28,6 +28,7 @@ brew install ghostscript pdf2svg
 Two settings can be set to specify the locations of the used binaries:
 - `eps-preview.path.ps2pdf`
 - `eps-preview.path.pdf2svg`
+- `eps-preview.backgroundColor`, default is `white`, can be any string that can be recognized by the CSS's `background-color`.
 
 ## Known Issues
 
@@ -36,6 +37,10 @@ None yet.
 ## Release Notes
 
 Users appreciate release notes as you update your extension.
+
+### 0.5.0
+
+Added background color setting.
 
 ### 0.4.0
 

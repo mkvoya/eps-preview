@@ -5,6 +5,14 @@ All notable changes to the "eps-preview" extension will be documented in this fi
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.5.0] - 2024-10-23
+
+### Added
+
+- Support background color setting. The settings `eps-preview.backgroundColor` can be `white`, `black`, or any string that can be recognized by the CSS's `background-color`.
+
+[0.5.0]: https://github.com/mkvoya/eps-preview/releases/tag/v0.5.0
+
 ## [0.4.0] - 2022-04-12
 
 ### Added
